@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 
 public class FirstTest extends BaseTest {
 
-
     @DataProvider(name = "TestDataProvider")
     public static Object[][] getDataFromDataProvider() {
         return new Object[][]{
@@ -15,12 +14,10 @@ public class FirstTest extends BaseTest {
         };
     }
 
-
     @Test(dataProvider = "TestDataProvider")
     public void titleVerificationTest(String title, String url) {
         openUrl(url);
         String actualTitle = getTitle();
         Assert.assertTrue(actualTitle.contains(title));
     }
-
 }
